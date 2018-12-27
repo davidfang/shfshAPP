@@ -24,6 +24,7 @@
     "git-hook": "npm run lint -s && npm run test -s"
   },
   "dependencies": {
+    "@ant-design/react-native": "^3.0.3",
     "apisauce": "^0.14.2",
     "format-json": "^1.0.3",
     "identity-obj-proxy": "^3.0.0",
