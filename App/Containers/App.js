@@ -4,6 +4,7 @@ import React, { Component } from 'react'
 import { Provider } from 'react-redux'
 import RootContainer from './RootContainer'
 import createStore from '../Redux'
+import SplashScreen from 'react-native-splash-screen' // 引入 react-native-splash-screen
 
 // create our store
 const store = createStore()
@@ -18,10 +19,17 @@ const store = createStore()
  * We separate like this to play nice with React Native's hot reloading.
  */
 class App extends Component {
+  componentDidMount () {
+    // 隐藏启动页，如果不设置消失时间，在组件加载完启动页自动隐藏
+    setTimeout(() => {
+      SplashScreen.hide()
+    }, 5000)
+  }
+
   render () {
     return (
       <Provider store={store}>
-        <RootContainer />
+        <RootContainer/>
       </Provider>
     )
   }
