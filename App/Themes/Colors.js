@@ -1,4 +1,8 @@
 const colors = {
+  brandPrimary: '#e91e63', // 全局品牌色
+  brandPrimaryTap: '#e99ed4', // 全局品牌色辅助
+  headerTintColor: '#fff',
+  tabBarBackground: '#c5bfc1', // tabBar背景色
   background: '#1F0808',
   clear: 'rgba(0,0,0,0)',
   facebook: '#3b5998',

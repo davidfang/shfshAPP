@@ -9,6 +9,7 @@ import Home from '../Containers/Home'
 import LaunchScreen from '../Containers/LaunchScreen'
 
 import styles from './Styles/NavigationStyles'
+import { ScreenUtil, Colors } from '../Themes'
 
 const TabNavigator = createBottomTabNavigator(
   {
@@ -18,7 +19,7 @@ const TabNavigator = createBottomTabNavigator(
         tabBarVisible: true,
         tabBarLabel: '网红刷粉',
         tabBarIcon: ({focused, horizontal, tintColor}) => <Image source={require('../Images/网红刷粉.png')}
-                                                               style={[styles.icon, {tintColor: tintColor}]} />
+                                                                 style={[styles.icon, {tintColor: tintColor}]}/>
       }
     },
     Task: {
@@ -27,35 +28,38 @@ const TabNavigator = createBottomTabNavigator(
         tabBarVisible: true,
         tabBarLabel: '刷手任务',
         tabBarIcon: ({focused, horizontal, tintColor}) => <Image source={require('../Images/刷手任务.png')}
-                                                                 style={[styles.icon, {tintColor: tintColor}]} />
-      }},
+                                                                 style={[styles.icon, {tintColor: tintColor}]}/>
+      }
+    },
     Order: {
       screen: Order,
       navigationOptions: {
         tabBarVisible: true,
         tabBarLabel: '订单',
         tabBarIcon: ({focused, horizontal, tintColor}) => <Image source={require('../Images/订单.png')}
-                                                                 style={[styles.icon, {tintColor: tintColor}]} />
-      }},
+                                                                 style={[styles.icon, {tintColor: tintColor}]}/>
+      }
+    },
     Me: {
       screen: Me,
       navigationOptions: {
         tabBarVisible: true,
         tabBarLabel: '我的',
         tabBarIcon: ({focused, horizontal, tintColor}) => <Image source={require('../Images/我的.png')}
-                                                                 style={[styles.icon, {tintColor: tintColor}]} />
-      }}
+                                                                 style={[styles.icon, {tintColor: tintColor}]}/>
+      }
+    }
   },
   {
     initialRouteName: 'Home',
     tabBarOptions: {
-      activeTintColor: '#e91e63',
+      activeTintColor: Colors.brandPrimary,
       labelStyle: {
-        fontSize: 12,
+        fontSize: ScreenUtil.setSpText(8)
       },
       style: {
-        backgroundColor: '#c5bfc1',
-      },
+        backgroundColor: Colors.tabBarBackground
+      }
     }
   }
 )
@@ -71,13 +75,13 @@ const PrimaryNav = createStackNavigator({
   // 默认标题栏样式
   defaultNavigationOptions: {
     headerStyle: {
-      backgroundColor: '#f4511e',
+      backgroundColor: Colors.brandPrimary
     },
-    headerTintColor: '#fff',
+    headerTintColor: Colors.headerTintColor,
     headerTitleStyle: {
-      fontWeight: 'bold',
-    },
-  },
+      fontWeight: 'bold'
+    }
+  }
 })
 
 export default createAppContainer(PrimaryNav)
