@@ -15,6 +15,11 @@ import com.facebook.soloader.SoLoader;
 import java.util.Arrays;
 import java.util.List;
 
+import com.shuafenshou.invokenative.DplusReactPackage;
+import com.shuafenshou.invokenative.RNUMConfigure;
+import com.umeng.commonsdk.UMConfigure;
+
+
 public class MainApplication extends Application implements ReactApplication {
 
   private final ReactNativeHost mReactNativeHost = new ReactNativeHost(this) {
@@ -30,7 +35,8 @@ public class MainApplication extends Application implements ReactApplication {
             new SplashScreenReactPackage(),
             new RNDeviceInfo(),
             new VectorIconsPackage(),
-            new RNGestureHandlerPackage()
+            new RNGestureHandlerPackage(),
+            new DplusReactPackage()
       );
     }
 
@@ -49,5 +55,6 @@ public class MainApplication extends Application implements ReactApplication {
   public void onCreate() {
     super.onCreate();
     SoLoader.init(this, /* native exopackage */ false);
+    RNUMConfigure.init(this, "5c25bf18b465f52e520002ea", "ChannelOtherID", UMConfigure.DEVICE_TYPE_PHONE,"");
   }
 }

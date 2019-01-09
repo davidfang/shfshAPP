@@ -38,7 +38,7 @@
 		</dict>
 	</dict>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string/>
+	<string></string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>AntDesign.ttf</string>
@@ -58,6 +58,10 @@
 		<string>Zocial.ttf</string>
 		<string>antfill.ttf</string>
 		<string>antoutline.ttf</string>
+	</array>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
 	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
